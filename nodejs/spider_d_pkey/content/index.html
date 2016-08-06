@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>测试反爬虫</title>
+</head>
+<body>
+  <div id="result">请求数据...</div>
+</body>
+<!-- <script src="http://zeptojs.com/zepto.min.js"></script> -->
+<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+<script>
+$(function(){
+  var start = +new Date;
+  $.ajax({
+    async: false,
+    url: '/key',
+    type: "GET",
+    dataType: 'jsonp',
+    jsonp: 'callback',
+    // cache: false,
+    success: function(key){
+      $.ajax({
+        url: '/price',
+        data: {
+          key: key
+        },
+        success: function(data){
+          var $result = $('#result');
+          $result.html(data);
+          var end = +new Date;
+          console.log( (end-start)/1000 );
+        },
+      })
+    },
+  })
+})
+</script>
+</html>
