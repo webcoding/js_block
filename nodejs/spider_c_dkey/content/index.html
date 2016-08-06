@@ -5,12 +5,26 @@
   <title>测试反爬虫</title>
 </head>
 <body>
-hello;
+请求数据...
 </body>
 <script src="http://zeptojs.com/zepto.min.js"></script>
 <script>
 $(function(){
-
+  $.ajax({
+    url: '/key',
+    cache: false,
+    success: function(data){
+      $.ajax({
+        url: '/price',
+        data: {
+          key: data
+        },
+        success: function(data){
+          document.body.innerHTML = data;
+        },
+      })
+    },
+  })
 })
 </script>
 </html>
