@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>构建请求任务</title>
+  <style>
+button{ padding: 5px 10px;}
+textarea{display: inline-block; vertical-align: top;}
+.logger{display: inline-block;}
+.logger:before{content: 'logger';}
+
+.task {margin: 20px auto;}
+.task .oper{margin: 10px auto;}
+  </style>
+</head>
+<body>
+  <div class="task-list">
+    <button id="addTask">新增任务</button>
+  </div>
+  <div class="task-nav">
+    <h3>任务列表</h3>
+    <ul>
+      <li data-id="id">name</li>
+    </ul>
+  </div>
+  <script type="text/template" id='tpl'>
+    <div class="task" data-id="{{id}}">
+      <div class="oper">
+        <button class="deleteTask">删除任务</button>
+        <button class="runTask">运行任务</button>
+      </div>
+      <textarea name="name" rows="8" cols="40">{{task}}</textarea>
+      <span class="logger"></span>
+    </div>
+  </script>
+</body>
+<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+<script src="http://marcuswestin.github.io/store.js/store.js"></script>
+<script>
+$(function(){
+  // function $dom(filter){
+  //   return document.querySelectorAll(filter);
+  // }
+  var template = $('#tpl').html();
+  var $taskList = $('.task-list');
+  var $addTask = $('#addTask');
+
+
+  function _template(template, data){
+    var i = 0,
+      len = data.length,
+      fragment = '';
+    function replace(obj){
+      var t, key, reg;
+      for(key in obj){
+        reg = new RegExp('{{' + key + '}}', 'ig');
+        t = (t || template).replace(reg, obj[key]);
+      }
+      return t;
+    }
+    for(; i < len; i++){
+      fragment += replace(data[i]);
+    }
+    return fragment;
+  }
+
+  var taskId = 1,curTaskId;
+  var defaultTask = {
+    id: taskId,
+    task: '',
+  };
+  var Store = store.get('__js_reqtask') || [];
+  if(Store && Store.length){
+    $addTask.after(_template(template, Store));
+  }else{
+    $addTask.after(_template(template, [defaultTask]));
+  }
+
+  $('body').on('click', '.runTask', function(e){
+    var $task = $(this).parent().parent();
+    var taskStr = $task.find('textarea').val();
+    curTaskId = parseInt($task.data('id'));
+    Store.push($.extend({},defaultTask,{
+      id: curTaskId,
+      task: taskStr,
+    }));
+    store.set('__js_reqtask', Store);
+    eval(taskStr);
+  });
+  $('body').on('click', '.deleteTask', function(e){
+    var $task = $(this).parent().parent();
+    $task.remove();
+  });
+  $('body').on('click', '.addTask', function(e){
+    var $task = $(this).parent().parent();
+    $task.remove();
+  });
+
+/* 测试数据
+  var start = +new Date;
+  $.ajax({
+    async: false,
+    url: '/key',
+    type: "GET",
+    dataType: 'jsonp',
+    jsonp: 'callback',
+    // cache: false,
+    success: function(key){
+      $.ajax({
+        url: '/price',
+        data: {
+          key: key
+        },
+        success: function(data){
+          var $result = $('#result');
+          $result.html(data);
+          var end = +new Date;
+          console.log( (end-start)/1000 );
+        },
+      })
+    },
+  })
+  */
+})
+</script>
+</html>
