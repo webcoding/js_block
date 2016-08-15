@@ -2,7 +2,7 @@
 
 'use strict'
 // const config = require('./web.config.js');
-const useEval = !false;//config.useEval;
+const useEval = true;  //config.useEval;
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
@@ -28,7 +28,7 @@ var createKey = function(callback, justkey){
   key = encodeDecodeList[1].encode(encodeDecodeList[0].encode(key));
   var source = `
       (function(){
-        //debugger;
+        // debugger;
         var decode1 = ${encodeDecodeList[1].decode.toString()};
         var decode2 = ${encodeDecodeList[0].decode.toString()};
         var key = ${JSON.stringify( key.toString().split('').map((item) => { return item.charCodeAt() }) )};

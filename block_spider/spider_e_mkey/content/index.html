@@ -20,6 +20,8 @@ $(function(){
     jsonp: 'callback',
     // cache: false,
     success: function(key){
+      //这里的 key 已经被 jsonp 执行处理过，是正确的 key，但如果未处理过，直接访问 /key 去获取，返回的就是一个处理的数据，不是真正的 key
+      console.log(key);
       $.ajax({
         url: '/price',
         data: {
