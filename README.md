@@ -6,7 +6,7 @@
 关于防止广告注入（内容安全策略CSP），可以设置 HEADER 头开启
 res.setHeader('Content-Security-Policy', "default-src 'self' 'unsafe-inline' 'unsafe-eval' *.iqianggou.com hm.baidu.com *.baidustatic.com pos.baidu.com dn-growing.qbox.me data: api.growingio.com;font-src at.alicdn.com;");
 
-也可以在 html 中设置 meta 属性开启
+也可以在 html 文档中设置 meta 属性开启（不必依赖服务端来设置了）
 <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' *.iqianggou.com hm.baidu.com *.baidustatic.com pos.baidu.com dn-growing.qbox.me data: api.growingio.com;font-src at.alicdn.com;">
 ```
 
