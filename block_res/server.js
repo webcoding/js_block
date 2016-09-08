@@ -19,7 +19,7 @@ const server = http.createServer((req, res) => {
 
   //内容安全策略 CSP
   //参看 https://content-security-policy.com/
-  res.setHeader('Content-Security-Policy', "default-src 'self' 'unsafe-inline' 'unsafe-eval' *.iqianggou.com hm.baidu.com *.baidustatic.com pos.baidu.com dn-growing.qbox.me data: api.growingio.com;font-src at.alicdn.com;");
+  res.setHeader('Content-Security-Policy', "default-src 'self' http: 'unsafe-inline' 'unsafe-eval' *.iqianggou.com hm.baidu.com *.baidustatic.com pos.baidu.com dn-growing.qbox.me data: api.growingio.com;font-src at.alicdn.com;");
   // 'unsafe-inline' 'unsafe-eval'
   // script-src hm.baidu.com dn-growing.qbox.me *.iqianggou.com;
   // img-src *;
