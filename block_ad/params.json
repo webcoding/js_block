@@ -1,0 +1,6 @@
+{
+  "name": "Ad.js",
+  "tagline": "An ad blocker.",
+  "body": "ad.js\r\n=================\r\n\r\n####功能####\r\n_免越狱_ 去除视频广告、部分网页广告\r\n\r\n####适用于####\r\n    适用系统：iOS 7.0 +  \r\n    广告屏蔽：爱奇艺（新增，仅支持网页版视频）、PPTV、优酷、土豆、乐视、湖南电视台、搜狐视频、腾讯视频、谷歌广告、百度广告、淘宝广告等\r\n\r\n####如何设置####\r\n    1. 打开 设置 - 无线局域网；  \r\n    2. 点击已经连接成功的无线网络名称右侧的 ⓘ 按钮；  \r\n    3. 进入界面后下拉至底部，在“HTTP 代理”一栏中点击“自动”标签；  \r\n    4. 在 URL 框中输入：[http://cdce.cf/ad.js]；  \r\n    5. 点击屏幕左上角【 ＜无线局域网 】返回即可保存设置。\r\n\r\n####拥有自己的ad.js <sub>(非必需操作)</sub>####\r\n    1. 你并不需要有一个服务器，只需一个GitHub帐号，即可拥有自己的ad.js；  \r\n    2. 登录后点击页面右上角【fork】按钮；  \r\n    3. 编辑ad.js文件，并保存；  \r\n    4. 您的ad.js网址为：[http://xxx.github.io/ad.js/ad.js]（[xxx]为你的GitHub帐号用户名）。设置方法同【如何设置】，将URL框中的网址改为以上网址；  \r\n    5. 如果设置完成后需要修改ad.js，关闭设备的http代理，重复第3-4步。  \r\n    ===========================================================\r\n    注：第3步不可跳过，如不想对ad.js修改，在文件末尾加上一个空格保存亦可；\r\n       您的ad.js不会随cdce.cf自动更新，请自行修改文件更新ad.js\r\n\r\n####如何关闭####\r\n    在“HTTP 代理”一栏中点击“关闭”标签。返回保存即可。\r\n\r\n####编辑ad.js####\r\n<a href=\"../../edit/gh-pages/ad.js\">〔点击此处打开〕</a>\r\n\r\n####项目主页####\r\n<http://cdce.cf/>\r\n\r\n####报告问题####\r\n<https://github.com/MikeWang000000/ad.js/issues>",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}

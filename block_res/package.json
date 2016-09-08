@@ -1,0 +1,23 @@
+{
+  "name": "spider_test",
+  "version": "0.1.1",
+  "description": "学习反爬虫",
+  "main": "index.js",
+  "dependencies": {
+    "request": "^2.74.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/webcoding/js_spider"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/webcoding/js_spider/issues"
+  },
+  "homepage": "https://github.com/webcoding/js_spider#readme"
+}
