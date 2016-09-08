@@ -34,14 +34,21 @@ res.setHeader('Content-Security-Policy', "default-src 'self' 'unsafe-inline' 'un
 <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' *.iqianggou.com hm.baidu.com *.baidustatic.com pos.baidu.com dn-growing.qbox.me data: api.growingio.com;font-src at.alicdn.com;">
 ```
 
+## 问题
+
 发现本地如上设置预览是 OK 的，发布 github 后预览就不 OK 了，需要解决下，初步猜测可能和 github 用的 https 协议有关
 
-此处使用 https 的 github，会要求加载资源也是用 https，于是乎就出问题了，针对 https 站点，引用 http 的资源，此处可以通过 http://www.w3.org/TR/mixed-content/ 来解决，即设置
+此处使用 https 的 github，会要求加载资源也必须用 https，于是乎就出问题了，针对 https 改造站点，难免会引用 http 的资源
+
+W3C 工作组考虑到了升级 HTTPS 的艰难，在 2015 年 4 月份就出了一个 Upgrade Insecure Requests 的草案（http://www.w3.org/TR/mixed-content/），他的作用就是让浏览器自动升级请求。页面一旦发现存在改响应头，会在加载 http 资源时自动替换成 https 请求。如下设置
 
 ```
 <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
 ```
 
-目前支持这个设置的还只有 chrome 43.0
+目前支持这个设置的还只有 chrome 43.0，另外此设置不会对外域的 a 链接做处理，w3c 也有提供一个示例 http://www.w3.org/TR/upgrade-insecure-requests/#examples
 
-w3c 也有提供一个示例 http://www.w3.org/TR/upgrade-insecure-requests/#examples
+
+#### 但是我们的http 资源没有对应的 https 资源，自动替换了也无解，怎么办
+
+目前我没找到方法，只能把 demo 示例改一下，改为引用同协议的资源

@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Cache-Control" content="no-siteapp">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' *.iqianggou.com hm.baidu.com *.baidustatic.com pos.baidu.com dn-growing.qbox.me data: api.growingio.com;font-src at.alicdn.com;upgrade-insecure-requests;">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests;default-src 'self' 'unsafe-inline' 'unsafe-eval' *.iqianggou.com hm.baidu.com *.baidustatic.com pos.baidu.com dn-growing.qbox.me data: api.growingio.com;font-src at.alicdn.com;">
   <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>爱抢购</title>
   <meta name="description" content="爱抢购－一个价格你做主的App，全球首创砍价模式。">
@@ -29,7 +29,10 @@
   </style>
 </head>
 <body>
-  <div id="root">test block res</div>
+  <div id="root">
+    <h2>test block res</h2>
+    <p>这个示例运行在 github 上的 https 协议下时，要求资源也必须为 https 协议的</p>
+  </div>
 <script>
 window._iqg_load_res_ready = Date.now();
 </script>
@@ -39,13 +42,13 @@ window._iqg_load_res_ready = Date.now();
 
 
 <!-- 未授权的广告注入 未被授权的来源，都将被拒绝执行 -->
-<img src="http://n.7k7kimg.cn/2014/1209/1418109581623.gif" alt="注入广告图片">
+<img src="https://n.7k7kimg.cn/2014/1209/1418109581623.gif" alt="注入广告图片">
 <script type="text/javascript">
   /* 测试注入百度广告，如果不把百度广告的来源设置为允许，则广告代码是不执行的 */
   /* 此处设置 cpro.baidustatic.com pos.baidu.com 为允许 */
   /* 自适应 创建于 2016/9/8*/
   var cpro_id = "u2756848";
 </script>
-<script src="http://cpro.baidustatic.com/cpro/ui/cm.js"></script>
+<script src="https://cpro.baidustatic.com/cpro/ui/cm.js"></script>
 </body>
 </html>
