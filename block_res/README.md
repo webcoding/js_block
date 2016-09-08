@@ -29,8 +29,6 @@
 发现本地如下设置预览是 OK 的，发布 github 后预览就不 OK 了，需要解决下，初步猜测可能和 github 用的 https 协议有关
 
 ```
-
-
 关于防止广告注入（内容安全策略CSP），可以设置 HEADER 头开启
 res.setHeader('Content-Security-Policy', "default-src 'self' 'unsafe-inline' 'unsafe-eval' *.iqianggou.com hm.baidu.com *.baidustatic.com pos.baidu.com dn-growing.qbox.me data: api.growingio.com;font-src at.alicdn.com;");
 
