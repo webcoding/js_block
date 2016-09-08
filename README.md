@@ -10,7 +10,7 @@ res.setHeader('Content-Security-Policy', "default-src 'self' 'unsafe-inline' 'un
 <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' *.iqianggou.com hm.baidu.com *.baidustatic.com pos.baidu.com dn-growing.qbox.me data: api.growingio.com;font-src at.alicdn.com;">
 ```
 
-关于 csp 参看：
+#### csp 相关资源参看：
 
 - http://www.weixinla.com/document/20635893.html
 - https://developer.mozilla.org/zh-CN/docs/Web/Security/CSP/Using_Content_Security_Policy
@@ -18,9 +18,11 @@ res.setHeader('Content-Security-Policy', "default-src 'self' 'unsafe-inline' 'un
 - http://www.chinaw3c.org/archives/396/
 - https://www.w3.org/TR/2015/CR-CSP2-20150721/ csp2 已经被支持
 - http://www.chinaw3c.org/archives/1242/ csp3正在进行时
+- https://w3c.github.io/webappsec-csp/
 - https://www.w3.org/TR/2016/WD-CSP3-20160126/
+- https://www.w3.org/Security/
 
-### nodejs 实现反爬虫
+## nodejs 实现反爬虫
 
 学习 http://geek.csdn.net/news/detail/85333
 
