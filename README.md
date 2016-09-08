@@ -1,8 +1,14 @@
 # js_block
 
-## 研究反爬虫、反黄牛、拦截注入广告等各种功能研究
+## 研究各种拦截：反爬虫、拦截广告、防止脚本注入或广告注入（防XSS）、斗黄牛等各种功能研究
 
+```
+关于防止广告注入（内容安全策略CSP），可以设置 HEADER 头开启
+res.setHeader('Content-Security-Policy', "default-src 'self' 'unsafe-inline' 'unsafe-eval' *.iqianggou.com hm.baidu.com *.baidustatic.com pos.baidu.com dn-growing.qbox.me data: api.growingio.com;font-src at.alicdn.com;");
 
+也可以在 html 中设置 meta 属性开启
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' *.iqianggou.com hm.baidu.com *.baidustatic.com pos.baidu.com dn-growing.qbox.me data: api.growingio.com;font-src at.alicdn.com;">
+```
 
 ### nodejs 实现反爬虫
 
