@@ -26,8 +26,6 @@
 参看：http://www.weixinla.com/document/20635893.html
 示例：https://webcoding.github.io/js_block/block_res/content/test2.html
 
-发现本地如下设置预览是 OK 的，发布 github 后预览就不 OK 了，需要解决下，初步猜测可能和 github 用的 https 协议有关
-
 ```
 关于防止广告注入（内容安全策略CSP），可以设置 HEADER 头开启
 res.setHeader('Content-Security-Policy', "default-src 'self' 'unsafe-inline' 'unsafe-eval' *.iqianggou.com hm.baidu.com *.baidustatic.com pos.baidu.com dn-growing.qbox.me data: api.growingio.com;font-src at.alicdn.com;");
@@ -35,3 +33,15 @@ res.setHeader('Content-Security-Policy', "default-src 'self' 'unsafe-inline' 'un
 也可以在 html 文档中设置 meta 属性开启（不必依赖服务端来设置了）
 <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' *.iqianggou.com hm.baidu.com *.baidustatic.com pos.baidu.com dn-growing.qbox.me data: api.growingio.com;font-src at.alicdn.com;">
 ```
+
+发现本地如上设置预览是 OK 的，发布 github 后预览就不 OK 了，需要解决下，初步猜测可能和 github 用的 https 协议有关
+
+此处使用 https 的 github，会要求加载资源也是用 https，于是乎就出问题了，针对 https 站点，引用 http 的资源，此处可以通过 http://www.w3.org/TR/mixed-content/ 来解决，即设置
+
+```
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+```
+
+目前支持这个设置的还只有 chrome 43.0
+
+w3c 也有提供一个示例 http://www.w3.org/TR/upgrade-insecure-requests/#examples
