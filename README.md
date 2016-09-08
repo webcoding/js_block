@@ -2,26 +2,6 @@
 
 ## 研究各种拦截：反爬虫、拦截广告、防止脚本注入或广告注入（防XSS）、斗黄牛等各种功能研究
 
-```
-关于防止广告注入（内容安全策略CSP），可以设置 HEADER 头开启
-res.setHeader('Content-Security-Policy', "default-src 'self' 'unsafe-inline' 'unsafe-eval' *.iqianggou.com hm.baidu.com *.baidustatic.com pos.baidu.com dn-growing.qbox.me data: api.growingio.com;font-src at.alicdn.com;");
-
-也可以在 html 文档中设置 meta 属性开启（不必依赖服务端来设置了）
-<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' *.iqianggou.com hm.baidu.com *.baidustatic.com pos.baidu.com dn-growing.qbox.me data: api.growingio.com;font-src at.alicdn.com;">
-```
-
-#### csp 相关资源参看：
-
-- http://www.weixinla.com/document/20635893.html
-- https://developer.mozilla.org/zh-CN/docs/Web/Security/CSP/Using_Content_Security_Policy
-- http://content-security-policy.com/
-- http://www.chinaw3c.org/archives/396/
-- https://www.w3.org/TR/2015/CR-CSP2-20150721/ csp2 已经被支持
-- http://www.chinaw3c.org/archives/1242/ csp3正在进行时
-- https://w3c.github.io/webappsec-csp/
-- https://www.w3.org/TR/2016/WD-CSP3-20160126/
-- https://www.w3.org/Security/
-
 ## nodejs 实现反爬虫
 
 学习 http://geek.csdn.net/news/detail/85333
