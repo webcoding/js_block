@@ -51,7 +51,7 @@ W3C 工作组考虑到了升级 HTTPS 的艰难，在 2015 年 4 月份就出了
 
 #### 但是我们的http 资源没有对应的 https 资源，自动替换了也无解，怎么办
 
-这个问题已经变了性质，如何在 https 页面中引入 http 资源
+这个问题已经变了性质，变成了**如何在 https 页面中引入 http 资源？**
 
 目前，浏览器默认是不允许在 https 里面引用 http 资源的，会被直接 block 掉的。这就是我们当前碰到的问题
 
@@ -61,4 +61,7 @@ W3C 工作组考虑到了升级 HTTPS 的艰难，在 2015 年 4 月份就出了
 
 chrome 有个参数，可以让 https 页面加载 http 资源(更多参数参看：https://www.douban.com/note/193710154/)
 
+```
+//我测试了，但不好用 目前仍然无解
 chrome.exe --allow-running-insecure-content
+```
