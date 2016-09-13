@@ -8,7 +8,7 @@ const fs = require('fs');
 const path = require('path');
 
 const port = 3000;
-var accepturl = '/price';
+var accepturl = '/data';
 
 var allEncodeList = [];
 fs.readdir(path.resolve(__dirname, './encodes'), (err, files) =>{
@@ -17,8 +17,20 @@ fs.readdir(path.resolve(__dirname, './encodes'), (err, files) =>{
   });
 })
 
+//生成随机差值
+function GetRandomNum(Min,Max){
+  var Range = Max - Min;
+  var Rand = Math.random();
+  return(Min + Math.round(Rand * Range));
+}
+var diffDate = GetRandomNum(2, 13) * 37000;
+
 var createKey = function(callback, justkey){
-  var key = (Math.floor((+new Date)/10000)); //后面要对数字进行操作，所以这里用数字，不是字符串
+  //这里是时间戳，但如果仅仅用这个，那么可以被傻瓜破解了，因为时间戳服务器端是固定的，与客户端差值是股东的，所以可以推算出来，这就傻瓜式破解了
+  //为了避免出现这种情况，使用随机差值方式，这里面要确认一件事，就是什么时机变值，这种方法可行吗？
+  //key 和 data 接口会成对出现么；貌似实现不了，
+  var tempDate = +new Date + diffDate;//Math.floor(Math.random()*10);
+  var key = (Math.floor(tempDate/10000)); //后面要对数字进行操作，所以这里用数字，不是字符串
   if(justkey){
     // console.log(key);
     return key;
@@ -76,18 +88,19 @@ const server = http.createServer((req, res) => {
     return;
   }
   else{
+    //demo 要求两个请求之间 最大时间间隔20s
     if(req.url.startsWith('/key')){
       res.setHeader('Content-Type', 'application/javascript');
       res.end(createKey(getCallback(req.url)));
       return;
     }
-    if(req.url.startsWith('/price')){
+    if(req.url.startsWith('/data')){
       var key = getKey(req.url);
       var acceptKey = createKey('', true);
       if(key == acceptKey || key == acceptKey -1){
-        res.end('rel price\n');
+        res.end('1\n'); //real data
       }else{
-        res.end('fake price\n');
+        res.end('0\n');  //fake data
       }
     }
   }

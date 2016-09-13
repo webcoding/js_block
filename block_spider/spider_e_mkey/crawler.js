@@ -10,7 +10,7 @@ var crawler = function(){
       key = item;
     }
     eval(body);
-    request('http://localhost:3000/price?key=' + key, function(error, response, body){
+    request('http://localhost:3000/data?key=' + key, function(error, response, body){
       if(!error && response.statusCode == 200){
         console.log(body); // show the HTML for the test page
       }
