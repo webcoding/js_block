@@ -98,16 +98,17 @@ $(function(){
 
 /* 测试数据
   var start = +new Date;
+  var path = 'http://10.0.0.119::3000';
   $.ajax({
     async: false,
-    url: '/key',
+    url: path + '/key',
     type: "GET",
     dataType: 'jsonp',
     jsonp: 'callback',
     // cache: false,
     success: function(key){
       $.ajax({
-        url: '/price',
+        url: path + '/price',
         data: {
           key: key
         },

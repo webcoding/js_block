@@ -6,7 +6,7 @@ var crawler = function(){
   request('http://localhost:3000/key?callback=test&_=' + (+new Date), function(error, response, body){
     var key = null;
     var test = function(item){
-      console.log(item);
+      // console.log(item);
       key = item;
     }
     eval(body);

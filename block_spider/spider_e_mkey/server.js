@@ -21,7 +21,7 @@ fs.readdir(path.resolve(__dirname, './encodes'), (err, files) =>{
 var createKey = function(callback, justkey){
   var key = (Math.floor((+new Date)/10000)); //后面要对数字进行操作，所以这里用数字，不是字符串
   if(justkey){
-    console.log(key);
+    // console.log(key);
     return key;
   }
   var encodeDecodeList = allEncodeList.slice().sort((a,b)=>Math.random() > 0.5);
@@ -32,7 +32,7 @@ var createKey = function(callback, justkey){
         var decode1 = ${encodeDecodeList[1].decode.toString()};
         var decode2 = ${encodeDecodeList[0].decode.toString()};
         var key = ${JSON.stringify( key.toString().split('').map((item) => { return item.charCodeAt() }) )};
-        console.log(key);
+        // console.log(key);
         var result = key.map( (item)=>String.fromCharCode(item) ).join('');
         key=+result;
         key=decode1(key);
