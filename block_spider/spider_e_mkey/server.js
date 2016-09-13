@@ -7,7 +7,6 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-const hostname = '127.0.0.1';
 const port = 3000;
 var accepturl = '/price';
 
@@ -95,6 +94,11 @@ const server = http.createServer((req, res) => {
 
 });
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}`);
+// 使用 hostname 会导致被限制只能使用 hostname，打开 IP则无法用
+// const hostname = '127.0.0.1';
+// server.listen(port, hostname, () => {
+//   console.log(`Server running at http://${hostname}:${port}`);
+// })
+server.listen(port, () => {
+  console.log(`Server running at http://127.0.0.1/:${port}`);
 })
