@@ -3,9 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <title>测试反爬虫</title>
+  <style>
+  body { line-height: 1.5;}
+  h4{margin: 10px 0;}
+  </style>
 </head>
 <body>
-  <div id="result">测试数据...</div>
+  <div id="result">如果是真实用户访问，则会一直获取真数据(1)，如果是爬虫，则不一定，目前设定返回掺假(0)的真数据，具体看你的本事啦<h4>测试数据...</h4></div>
 </body>
 <!-- <script src="http://zeptojs.com/zepto.min.js"></script> -->
 <!-- <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script> -->
@@ -31,7 +35,7 @@ $(function(){
             key: key
           },
           success: function(data){
-            $result.append('<br>' + data);
+            $result.append(data + '<br>');
             var end = +new Date;
             console.log( (end-start)/1000 );
           },
