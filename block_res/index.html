@@ -57,12 +57,13 @@ www.doweidu.com
     <iframe src="http://www.iqianggou.com/mobile/agreement.html" width="" height=""></iframe>
   </li>
   <li>
-    <h3>ajax请求 http资源</h3>
-    <p>GEO百度城市 api</p>
-    <button id='baidu'>百度 API</button>
+    <h3>ajax请求 http资源 ❌</h3>
+    <p>请求 api，必须 https 资源，否则报错</p>
+    <p>GEO百度城市 api，需要升级为 https api</p>
+    <button id='baidu'>API，http资源</button>
     
-    <p>高德定位 api</p>
-    <button id='gaode'>高德 API</button>
+    <p>高德定位 api，需要升级为 https api或使用//</p>
+    <button id='gaode'>API，升级为//</button>
   </li>
   <li>
   </li>
@@ -74,10 +75,11 @@ function getId(id){
 }
 var btnBaidu = getId('baidu');
 var btnGaode = getId('gaode');
-var testHttpApi = function(){
+var testHttpApi = function(protocol){
+  protocol = protocol || '';
   $.ajax({
     type: 'GET',
-    url: 'http://api.v3.iqianggou.com/api/appconfig',
+    url: protocol + '//api.v3.iqianggou.com/api/appconfig',
     // data: { name: 'Zepto.js' },
     dataType: 'json',
     timeout: 3000,
@@ -98,7 +100,7 @@ btnBaidu.onclick = function(){
   // 请求 http api资源，随便一个测试即可
   // http://api.v3.iqianggou.com/api/appconfig GET
   console.log('baidu')
-  testHttpApi()
+  testHttpApi('http:')
 }
 btnGaode.onclick = function(){
   console.log('gaode');
