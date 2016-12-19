@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>测试 https 加载资源</title>
+  <style>
+  iframe{display: block;width: 400px; height: 200px;}
+  </style>
+</head>
+<body>
+<h3>https 加载各种资源</h3>
+<ol>
+  <li>加载 字体 资源，使用// 自动支持</li>
+  <li>请求 本站 api，通过 location.protocol 判断自动选择</li>
+  <li>百度统计，使用// 自动支持；growing 脚本也自动支持
+    <script>
+      if (!window._hmt) window._hmt = [];
+      _hmt.push(['_setAutoPageview', false]);
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?dc887238fee1088e443acb020cd664f2";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  </li>
+  <li>
+    <h3>加载 img 资源</h3>
+    <img src="http://img-agc.iqianggou.com/f8f330abb4489745bda8ec3a36a6202e!180x180" alt="七牛">
+    <img src="http://img1.iqianggou.com/assets/images/logo.png" alt="七牛">
+    <img src="http://jingxuan.haoshiqi.net/assets/img/join-talent-bg.jpg" height="300" alt="非七牛">
+  </li>
+  <li>
+    <h3>加载 iframe 资源</h3>
+    <iframe src="http://www.iqianggou.com/mobile/agreement.html" width="" height=""></iframe>
+  </li>
+  <li>
+    <h3>请求 GEO百度城市 api</h3>
+    <button id='baidu'>百度 API</button>
+  </li>
+  <li>
+    <h3>请求 高德定位 api</h3>
+    <button id='gaode'>高德 API</button>
+  </li>
+  <li></li>
+</ol>
+<p></p>
+<p></p>
+<p></p>
+
+
+
+
+
+
+<script>
+
+</script>
+</body>
+</html>

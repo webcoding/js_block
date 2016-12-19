@@ -1,0 +1,28 @@
+{
+  "name": "githubrank",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "preferGlobal": "true",
+  "bin": {
+    "githubrank": "index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/i5ting/githubrank.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/i5ting/githubrank/issues"
+  },
+  "homepage": "https://github.com/i5ting/githubrank#readme",
+  "dependencies": {
+    "crawler": "^0.4.3",
+    "jsdom": "^9.8.0"
+  }
+}
