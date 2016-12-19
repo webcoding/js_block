@@ -6,6 +6,7 @@
   <style>
   iframe{display: block;width: 400px; height: 200px;}
   </style>
+  <script src="zepto.min.js"></script>
 </head>
 <body>
 <h3>https 加载各种资源</h3>
@@ -31,7 +32,7 @@ www.doweidu.com
   <li>加载 字体 资源，使用// 自动支持 ✔️</li>
   <li>请求 本站 api，通过 location.protocol 判断自动选择 ✔️</li>
   <li>百度统计，使用// 自动支持；growing 脚本也自动支持。支持加载 ✔️
-    <p>会对应 https 资源</p>
+    <p>使用 // 格式，在 https 协议下，会自动加载 // 对应的 https 资源</p>
     <script>
       if (!window._hmt) window._hmt = [];
       _hmt.push(['_setAutoPageview', false]);
@@ -52,30 +53,57 @@ www.doweidu.com
   </li>
   <li>
     <h3>加载 iframe 资源 ❌</h3>
-    <p>iframe 加载 http 资源会报错，浏览器要求iframe 必须加载 https 资源 </p>
+    <p>iframe 加载非 https 资源会被浏览器拦截，并报错，必须为 https 资源</p>
     <iframe src="http://www.iqianggou.com/mobile/agreement.html" width="" height=""></iframe>
   </li>
   <li>
-    <h3>请求 GEO百度城市 api</h3>
+    <h3>ajax请求 http资源</h3>
+    <p>GEO百度城市 api</p>
     <button id='baidu'>百度 API</button>
-  </li>
-  <li>
-    <h3>请求 高德定位 api</h3>
+    
+    <p>高德定位 api</p>
     <button id='gaode'>高德 API</button>
   </li>
-  <li></li>
+  <li>
+  </li>
 </ol>
-<p></p>
-<p></p>
-<p></p>
-
-
-
-
-
 
 <script>
-
+function getId(id){
+  return document.getElementById(id);
+}
+var btnBaidu = getId('baidu');
+var btnGaode = getId('gaode');
+var testHttpApi = function(){
+  $.ajax({
+    type: 'GET',
+    url: 'http://api.v3.iqianggou.com/api/appconfig',
+    // data: { name: 'Zepto.js' },
+    dataType: 'json',
+    timeout: 3000,
+    // context: $('body'),
+    success: function(data){
+      // Supposing this JSON payload was received:
+      //   {"project": {"id": 42, "html": "<div>..." }}
+      // append the HTML to context object.
+      console.log(data);
+      alert('Ajax success!');
+    },
+    error: function(xhr, type){
+      alert('Ajax error!');
+    }
+  })
+}
+btnBaidu.onclick = function(){
+  // 请求 http api资源，随便一个测试即可
+  // http://api.v3.iqianggou.com/api/appconfig GET
+  console.log('baidu')
+  testHttpApi()
+}
+btnGaode.onclick = function(){
+  console.log('gaode');
+  testHttpApi()
+}
 </script>
 </body>
 </html>
