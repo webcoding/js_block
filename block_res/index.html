@@ -6,10 +6,12 @@
   <style>
   iframe{display: block;width: 400px; height: 200px;}
   </style>
+  <script src="http://zeptojs.com/zepto.min.js"></script>
   <script src="zepto.min.js"></script>
 </head>
 <body>
 <h3>https 加载各种资源</h3>
+<p>使用 // 格式，在 https 协议下，会自动加载 // 对应的 https 资源</p>
 <dl>
   <dt>全站 https 需要部署的项目：</dt>
   <dd>
@@ -31,8 +33,8 @@ www.doweidu.com
 <ol>
   <li>加载 字体 资源，使用// 自动支持 ✔️</li>
   <li>请求 本站 api，通过 location.protocol 判断自动选择 ✔️</li>
-  <li>百度统计，使用// 自动支持；growing 脚本也自动支持。支持加载 ✔️
-    <p>使用 // 格式，在 https 协议下，会自动加载 // 对应的 https 资源</p>
+  <li>加载 js 资源，大部分脚本 ⚠️ 已处理加载对应的 https资源
+    <p>百度统计，使用// 自动支持；growing 脚本也自动支持。支持加载 ✔️</p>
     <script>
       if (!window._hmt) window._hmt = [];
       _hmt.push(['_setAutoPageview', false]);
@@ -60,12 +62,10 @@ www.doweidu.com
     <h3>ajax请求 http资源 ❌</h3>
     <p>请求 api，必须 https 资源，否则报错</p>
     <p>GEO百度城市 api，需要升级为 https api</p>
-    <button id='baidu'>API，http资源</button>
+    <button id='baidu'>API，http资源 ❌</button>
     
     <p>高德定位 api，需要升级为 https api或使用//</p>
-    <button id='gaode'>API，升级为//</button>
-  </li>
-  <li>
+    <button id='gaode'>API，升级为// ✔️</button>
   </li>
 </ol>
 
