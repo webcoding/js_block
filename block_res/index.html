@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>测试 https 加载资源</title>
+  <link rel="stylesheet" href="http://necolas.github.io/normalize.css/5.0.0/normalize.css">
   <style>
   iframe{display: block;width: 400px; height: 200px;}
   </style>
@@ -22,11 +23,12 @@ m.haoshiqi.net
 jingxuan.haoshiqi.net
 
 以上站点及 app 内，会加载一些外部的静态资源，如用于协议、帮助等页面
+通过iframe 加载外部 http资源，会被阻止加载
 www.iqianggou.com
 www.haoshiqi.com
 www.doweidu.com
 
-通过iframe 加载外部 http资源，会被阻止加载
+还有一部分资源（图片、js、css等）放在【七牛】上，也需要处理
 </pre>
   </dd>
 </dl>
