@@ -9,10 +9,29 @@
 </head>
 <body>
 <h3>https 加载各种资源</h3>
+<dl>
+  <dt>全站 https 需要部署的项目：</dt>
+  <dd>
+<pre>
+m.iqianggou.com
+stats-m.iqianggou.com
+m.haoshiqi.net
+jingxuan.haoshiqi.net
+
+以上站点及 app 内，会加载一些外部的静态资源，如用于协议、帮助等页面
+www.iqianggou.com
+www.haoshiqi.com
+www.doweidu.com
+
+通过iframe 加载外部 http资源，会被阻止加载
+</pre>
+  </dd>
+</dl>
 <ol>
-  <li>加载 字体 资源，使用// 自动支持</li>
-  <li>请求 本站 api，通过 location.protocol 判断自动选择</li>
-  <li>百度统计，使用// 自动支持；growing 脚本也自动支持
+  <li>加载 字体 资源，使用// 自动支持 ✔️</li>
+  <li>请求 本站 api，通过 location.protocol 判断自动选择 ✔️</li>
+  <li>百度统计，使用// 自动支持；growing 脚本也自动支持。支持加载 ✔️
+    <p>会对应 https 资源</p>
     <script>
       if (!window._hmt) window._hmt = [];
       _hmt.push(['_setAutoPageview', false]);
@@ -25,13 +44,15 @@
     </script>
   </li>
   <li>
-    <h3>加载 img 资源</h3>
+    <h3>加载 img 资源 ⚠️</h3>
+    <p>加载非 https图片，会给个警告，但网页可以正常显示图片</p>
     <img src="http://img-agc.iqianggou.com/f8f330abb4489745bda8ec3a36a6202e!180x180" alt="七牛">
     <img src="http://img1.iqianggou.com/assets/images/logo.png" alt="七牛">
     <img src="http://jingxuan.haoshiqi.net/assets/img/join-talent-bg.jpg" height="300" alt="非七牛">
   </li>
   <li>
-    <h3>加载 iframe 资源</h3>
+    <h3>加载 iframe 资源 ❌</h3>
+    <p>iframe 加载 http 资源会报错，浏览器要求iframe 必须加载 https 资源 </p>
     <iframe src="http://www.iqianggou.com/mobile/agreement.html" width="" height=""></iframe>
   </li>
   <li>
