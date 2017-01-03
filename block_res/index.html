@@ -66,6 +66,31 @@ www 站对 com-iqianggou-img-agc.qiniudn.com 的引用作废掉，处理下改�
     <img src="http://jingxuan.haoshiqi.net/assets/img/join-talent-bg.jpg" height="300" alt="非七牛">
   </li>
   <li>
+    <h3>加载 SVG 资源呢</h3>
+    <p>SVG 所引用的命名空间会被影响吗</p>
+    <p>svg1</p>
+    <svg width="540" height="200" viewBox="0 0 270 100" style="margin:0">
+      <defs>
+        <radialGradient id="radial" cx="50%" cy="50%" fx="25%" fy="25%">
+          <stop offset="0%" stop-color="#60bafc"></stop>
+          <stop offset="50%" stop-color="#409adc"></stop>
+          <stop offset="100%" stop-color="#005a9c"></stop>
+        </radialGradient>
+        <path id="curve" d="M18,60 C100,10 180,110 264,60" fill="none"></path>
+      </defs>
+
+      <circle cx="138" cy="50" r="38" fill="url(#radial)" stroke="#005a9c"></circle>
+
+      <text font-family="Verdana" font-size="20" fill="#ff9900"><textPath xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#curve" method="stretch" style="visibility: visible;">Scalable <tspan fill="white">Vector</tspan> Graphics</textPath></text>
+    </svg>
+    <p>svg2</p>
+    <svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="240" cy="100" rx="220" ry="30" style="fill:yellow"/>
+      <ellipse cx="220" cy="100" rx="190" ry="20" style="fill:white"/>
+    </svg>
+
+  </li>
+  <li>
     <h3>加载 iframe 资源 ❌</h3>
     <p>iframe 加载非 https 资源会被浏览器拦截，并报错，必须为 https 资源</p>
     <iframe src="http://www.iqianggou.com/mobile/agreement.html" width="" height=""></iframe>
