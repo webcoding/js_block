@@ -13,14 +13,14 @@
 &lt;meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" /&ft;
 </pre>
 
-<p>下面测试请求跨域的 http 资源（图片 or js）</p>
+<p>下面会加载跨域的五个http资源（包含 js/css/img），设置 upgrade-insecure-requests 的页面，将会自动把http请求变更为 https，否则 js/css 将被 blocked，图片会被警告或 blocked</p>
 
 <script src="http://webcoding.github.io/js_block/block_res/zepto.min.js"></script>
 <link rel="stylesheet" href="http://img1.iqianggou.com/assets/css/dwd_h5.min_b3c9a091b9.css" />
 
-<img src="http://img-agc.iqianggou.com/f8f330abb4489745bda8ec3a36a6202e!180x180" alt="七牛">
-<img src="http://img1.iqianggou.com/assets/images/logo.png" alt="七牛">
-<img src="http://jingxuan.haoshiqi.net/assets/img/join-talent-bg.jpg" height="300" alt="非七牛">
+<img src="http://img-agc.iqianggou.com/f8f330abb4489745bda8ec3a36a6202e!180x180" alt="七牛 http 图片">
+<img src="http://img1.iqianggou.com/assets/images/logo.png" alt="七牛 http 图片">
+<img src="http://jingxuan.haoshiqi.net/assets/img/join-talent-bg.jpg" height="300" alt="非七牛 http 图片">
 
 </body>
 </html>
