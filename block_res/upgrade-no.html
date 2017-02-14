@@ -10,7 +10,7 @@
 <p>W3C 工作组考虑到了升级 HTTPS 的艰难，在 2015 年 4 月份就出了一个 Upgrade Insecure Requests 的草案 http://www.w3.org/TR/mixed-content/，他的作用就是让浏览器自动升级请求。页面一旦发现存在该响应头，会在加载 http 资源时自动替换成 https 请求。如下设置</p>
 
 <pre>
-&lt;meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" /&ft;
+&lt;meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" /&gt;
 </pre>
 
 <p>下面会加载跨域的五个http资源（包含 js/css/img），设置 upgrade-insecure-requests 的页面，将会自动把http请求变更为 https，否则 js/css 将被 blocked，图片会被警告或 blocked</p>
@@ -38,5 +38,13 @@ if (!window._hmt) window._hmt = [];
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
+
+<p>为什么下面几张 http 图片在 https://jingxuan.haoshiqi.net 中被 blocked</p>
+
+<img src="http://img.haoshiqi.net/merchantadmin/image20161122/maddc62c6b3a0b1b70e651a5497b7c9e3d_384X640" alt="">
+<img src="http://img.haoshiqi.net/merchantadmin/image20170213/ma35d52d93371ba23b8aee5830d6ed5c64@200w_200h_90Q.jpg" alt="">
+<p style="width: 640px;height:380px;background-image: url(http://img.haoshiqi.net/merchantadmin/image20170104/ma04178241c7aa5c7af4c2e931cc013044_300X640)" ></p>
+<p style="width: 200px;height:200px;background-image: url(http://img.haoshiqi.net/merchantadmin/image20161130/ma6f36d36dfb7a306072db41de416b4baf)" ></p>
+
 </body>
 </html>
