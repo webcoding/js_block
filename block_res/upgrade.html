@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+  <title>测试 upgrade-insecure-requests</title>
+</head>
+<body>
+<h2>测试 upgrade-insecure-requests（已设置）</h2>
+<p>W3C 工作组考虑到了升级 HTTPS 的艰难，在 2015 年 4 月份就出了一个 Upgrade Insecure Requests 的草案 http://www.w3.org/TR/mixed-content/，他的作用就是让浏览器自动升级请求。页面一旦发现存在该响应头，会在加载 http 资源时自动替换成 https 请求。如下设置</p>
+
+<pre>
+&lt;meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" /&ft;
+</pre>
+
+<p>下面测试请求跨域的 http 资源（图片 or js）</p>
+
+<script src="http://webcoding.github.io/js_block/block_res/zepto.min.js"></script>
+<link rel="stylesheet" href="http://img1.iqianggou.com/assets/css/dwd_h5.min_b3c9a091b9.css" />
+
+<img src="http://img-agc.iqianggou.com/f8f330abb4489745bda8ec3a36a6202e!180x180" alt="七牛">
+<img src="http://img1.iqianggou.com/assets/images/logo.png" alt="七牛">
+<img src="http://jingxuan.haoshiqi.net/assets/img/join-talent-bg.jpg" height="300" alt="非七牛">
+
+</body>
+</html>

@@ -1,4 +1,5 @@
 source: https://github.com/hstarorg/HstarDoc/edit/master/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/CORS%E8%AF%A6%E8%A7%A3.md
+http://www.ruanyifeng.com/blog/2016/04/cors.html
 
 ## 0、关于CORS
 
