@@ -1,0 +1,459 @@
+<!-- source: https://www.ssllabs.com/ssltest/viewMyClient.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Qualys SSL Labs - Projects / SSL Client Test</title>
+  <meta charset="utf-8" />
+  <link href="css/ssllabs.css" rel="styleSheet" type="text/css">
+  <link href="css/report.css" rel="styleSheet" type="text/css">
+  <link href="css/main.css" rel="styleSheet" type="text/css">
+  <script type="text/javascript" src="../zepto.min.js"></script>
+</head>
+<body>
+  <div id="page">
+    <div id="header">
+      <div id="logo">
+        <a href="/index.html" rel="noreferrer"><img src="https://ssllabs.com/images/qualys-ssl-labs-logo.png" width="341" height="55" alt="SSL Labs logo" title="SSL Labs logo"></a>
+      </div>
+
+      <div id="navigation">
+        <a class="link" href="/index.html" rel="noreferrer">Home</a>
+        <a class="link" href="/projects/index.html" rel="noreferrer">Projects</a>
+        <a class="link" href="https://www.qualys.com" rel="noreferrer">Qualys.com</a>
+        <a class="link" href="/about/contact.html" rel="noreferrer">Contact</a>
+      </div>
+
+      <br clear="all" />
+    </div>
+
+    <div id="breadcrumbs">
+      <b>You are here:&nbsp;</b>
+      <a href="/index.html">Home</a> &gt; <a href="/projects/index.html">Projects</a> &gt; SSL Client Test
+    </div>
+
+    <div id="main">
+
+      <div class="floatLeft">
+        <div class="reportTitle report-title-style">SSL/TLS Capabilities of Your Browser</div>
+        <div class="reportTime width-650"><b>User Agent:</b> Mozilla&#47;5&#46;0&#32;&#40;Macintosh&#59;&#32;Intel&#32;Mac&#32;OS&#32;X&#32;10&#95;12&#95;3&#41;&#32;AppleWebKit&#47;537&#46;36&#32;&#40;KHTML&#44;&#32;like&#32;Gecko&#41;&#32;Chrome&#47;58&#46;0&#46;3000&#46;4&#32;Safari&#47;537&#46;36</div>
+      </div>
+      <div class="floatRight"><br><a href="/ssltest/clients.html">Other User Agents&nbsp;&raquo;</a></div>
+      <br clear="all" />
+
+
+      <div align="center">
+
+
+
+
+        <noscript>
+        <div id=warningBox class="warning-box-line-height">
+        <b>Without JavaScript, the following tests will not run:</b>
+        (1) Accurate protocol support, (2) SSL 3 POODLE vulnerability, (3) mixed content handling,
+            (4) TLS authentication bug in Apple's products, and (5) the FREAK attack.
+        Please enable JavaScript for best results.
+        </ul>
+        </div>
+        <br>
+    </noscript>
+
+
+        <div id="mixedCSSHiddenDiv1" class="display-none"></div>
+        <div id="mixedCSSHiddenDiv2" class="display-none"></div>
+        <iframe src="http://plaintext.ssllabs.com/plaintext/frame.html" class="display-none" width="0" height="0"></iframe>
+
+        <div id="hiddenImagesDiv" class="display-none"></div>
+        <div id="protocolSupportDiv" class="display-none"></div>
+
+
+
+        <div class="reportSection" id="protocolTestDiv">
+          <div class="sectionTitle" id="protocolTestHeading">Protocol Support</div>
+          <div class="sectionBody">
+            <div id="protocolTestMsg"><img src=images/progress-indicator.gif width=16 height=16> Please wait, checking protocol support...</div>
+            <div id="protocolTestMsgNotes"></div>
+          </div>
+        </div>
+
+        <div class="reportSection" id="jamTestDiv">
+          <div class="sectionTitle">Logjam Vulnerability</div>
+          <div class="sectionBody">
+            <div id="jamTestMsg"><img src=images/progress-indicator.gif width=16 height=16> Please wait, checking if your user agent is vulnerable...</div>
+            <div id="jamTestMsgNotes">
+              For more information about the Logjam attack, please go to
+              <a href="https://weakdh.org">weakdh.org</a>.<br> To test manually, click <a href="https://www.ssllabs.com:10445/">here</a>. Your user agent is not vulnerable if it fails to connect to the site.</div>
+          </div>
+        </div>
+
+        <div class="reportSection" id="freakTestDiv">
+          <div class="sectionTitle">FREAK Vulnerability</div>
+          <div class="sectionBody">
+            <div id="freakTestMsg"><img src=images/progress-indicator.gif width=16 height=16> Please wait, checking if your user agent is vulnerable...</div>
+            <div id="freakTestMsgNotes">
+              For more information about the FREAK attack, please go to
+              <a href="https://www.freakattack.com">www.freakattack.com</a>.<br> To test manually, click <a href="https://www.ssllabs.com:10444/">here</a>. Your user agent is not vulnerable if it fails to connect to the site.</div>
+          </div>
+        </div>
+
+        <div class="reportSection" id="ssl3TestDiv">
+          <div class="sectionTitle">POODLE Vulnerability</div>
+          <div class="sectionBody">
+            <div id="ssl3TestMsg"><img src=images/progress-indicator.gif width=16 height=16> Please wait, checking if your user agent is vulnerable...</div>
+            <div id="ssl3TestMsgNotes">For more information about the POODLE attack, please read <a href="https://community.qualys.com/blogs/securitylabs/2014/10/15/ssl-3-is-dead-killed-by-the-poodle-attack">this blog post</a>.</div>
+          </div>
+        </div>
+
+        <div class="reportSection" id="ssl2TestDiv">
+          <div class="sectionTitle">SSL 2 Protocol Support</div>
+          <div class="sectionBody">
+            <div id="ssl2TestMsg">
+              <font color="red">Your user agent supports SSL 2. You should upgrade.</font>
+            </div>
+            <div id="ssl2TestMsgNotes">SSL 2 is a very old, obsolete, and insecure version of the SSL protocol. You can usually disable this protocol version in configuration, but modern clients don't support it at all. This really means that you should upgrade your software to
+              a better version.</div>
+          </div>
+        </div>
+
+        <script type="text/javascript" src="/includes/viewClient.js"></script>
+        <input id="mainsitehost" type="hidden" value=www.ssllabs.com>
+        <input id="plaintextSiteHost" type="hidden" value=plaintext.ssllabs.com>
+        <div class="reportSection" id="appleTestDiv">
+          <div class="sectionTitle">iOS and OS X TLS Authentication Vulnerability</div>
+          <div class="sectionBody">
+
+            <div id="appleTestMsg"><img src=images/progress-indicator.gif width=16 height=16> Please wait, checking if your user agent is vulnerable...</div>
+            <div id="appleTestMsgNotes">To test manually, <a href="https://www.ssllabs.com:10443">click here</a>. If your user agent refuses to connect, you are not vulnerable. This test requires a connection to the SSL Labs server on port 10443. A strict outbound firewall might
+              interfere. You should test Safari running on iOS or OS X. Chrome and Firefox are not vulnerable, even when running on a vulnerable operating system.
+              <a href="https://community.qualys.com/blogs/securitylabs/2014/02/24/ssl-labs-testing-for-apples-tls-authentication-bug"><b>MORE&nbsp;&raquo;</b></a></div>
+
+            <script type="text/javascript" src="/includes/viewClient-appleTest.js"></script>
+
+          </div>
+        </div>
+
+        <div class="reportSection">
+          <div class="sectionTitle">Protocol Features</div>
+          <div class="sectionBody">
+
+            <img class="tIcon" src="images/icon-protocol.png" width="65" height="50">
+            <table class="reportTable">
+              <thead>
+                <tr>
+                  <td class="tableHead" colspan="2" align="left">Protocols</td>
+                </tr>
+              </thead>
+              <tbody>
+
+
+                <tr class="tableRow">
+                  <td class="tableLeft" id="protocol_tls1_2_label">TLS 1.2</td>
+                  <td class="tableRight" id="protocol_tls1_2">Yes*</td>
+                </tr>
+                <tr class="tableRow">
+                  <td class="tableLeft">TLS 1.1</td>
+                  <td class="tableRight" id="protocol_tls1_1">Yes*</td>
+                </tr>
+                <tr class="tableRow">
+                  <td class="tableLeft">TLS 1.0</td>
+                  <td class="tableRight" id="protocol_tls1">Yes*</td>
+                </tr>
+                <tr class="tableRow">
+                  <td class="tableLeft" id="protocol_ssl3_label">SSL 3</td>
+                  <td class="tableRight" id="protocol_ssl3">Yes*</td>
+                </tr>
+                <tr class="tableRow">
+                  <td class="tableLeft" id="protocol_ssl2_label">SSL 2</td>
+                  <td class="tableRight" id="protocol_ssl2">No</td>
+                </tr>
+
+                <noscript>
+    <tr class="tableRow">
+	<td colspan=2 align=left>
+	<span class="color666666">(*) Without JavaScript, this test reliably detects only the highest supported protocol.</span>
+	</td>
+	</tr>
+    </noscript>
+
+              </tbody>
+            </table>
+
+            <br><br>
+
+            <img class="tIcon" src="images/icon-cipher.png" width="65" height="50" alt="">
+            <table class="reportTable">
+
+              <thead>
+                <tr>
+                  <td class="tableHead" colspan="3" align="left">Cipher Suites (in order of preference)</td>
+                </tr>
+              </thead>
+
+              <tr>
+                <td class="tableLeft">TLS&#95;GREASE&#95;9A (<code>0x9a9a</code>)</td>
+                <td class="tableRight">-</td>
+              </tr>
+              <tr>
+                <td class="tableLeft">TLS&#95;ECDHE&#95;ECDSA&#95;WITH&#95;AES&#95;128&#95;GCM&#95;SHA256 (<code>0xc02b</code>) &nbsp; <span class="dhParams color-green">Forward Secrecy</span>
+                </td>
+                <td class="tableRight">128</td>
+              </tr>
+              <tr>
+                <td class="tableLeft">TLS&#95;ECDHE&#95;RSA&#95;WITH&#95;AES&#95;128&#95;GCM&#95;SHA256 (<code>0xc02f</code>) &nbsp; <span class="dhParams color-green">Forward Secrecy</span>
+                </td>
+                <td class="tableRight">128</td>
+              </tr>
+              <tr>
+                <td class="tableLeft">TLS&#95;ECDHE&#95;ECDSA&#95;WITH&#95;AES&#95;256&#95;GCM&#95;SHA384 (<code>0xc02c</code>) &nbsp; <span class="dhParams color-green">Forward Secrecy</span>
+                </td>
+                <td class="tableRight">256</td>
+              </tr>
+              <tr>
+                <td class="tableLeft">TLS&#95;ECDHE&#95;RSA&#95;WITH&#95;AES&#95;256&#95;GCM&#95;SHA384 (<code>0xc030</code>) &nbsp; <span class="dhParams color-green">Forward Secrecy</span>
+                </td>
+                <td class="tableRight">256</td>
+              </tr>
+              <tr>
+                <td class="tableLeft">TLS&#95;ECDHE&#95;ECDSA&#95;WITH&#95;CHACHA20&#95;POLY1305&#95;SHA256 (<code>0xcca9</code>) &nbsp; <span class="dhParams color-green">Forward Secrecy</span>
+                </td>
+                <td class="tableRight">256</td>
+              </tr>
+              <tr>
+                <td class="tableLeft">TLS&#95;ECDHE&#95;RSA&#95;WITH&#95;CHACHA20&#95;POLY1305&#95;SHA256 (<code>0xcca8</code>) &nbsp; <span class="dhParams color-green">Forward Secrecy</span>
+                </td>
+                <td class="tableRight">256</td>
+              </tr>
+              <tr>
+                <td class="tableLeft">TLS&#95;ECDHE&#95;RSA&#95;WITH&#95;AES&#95;128&#95;CBC&#95;SHA (<code>0xc013</code>) &nbsp; <span class="dhParams color-green">Forward Secrecy</span>
+                </td>
+                <td class="tableRight">128</td>
+              </tr>
+              <tr>
+                <td class="tableLeft">TLS&#95;ECDHE&#95;RSA&#95;WITH&#95;AES&#95;256&#95;CBC&#95;SHA (<code>0xc014</code>) &nbsp; <span class="dhParams color-green">Forward Secrecy</span>
+                </td>
+                <td class="tableRight">256</td>
+              </tr>
+              <tr>
+                <td class="tableLeft">TLS&#95;RSA&#95;WITH&#95;AES&#95;128&#95;GCM&#95;SHA256 (<code>0x9c</code>)
+                </td>
+                <td class="tableRight">128</td>
+              </tr>
+              <tr>
+                <td class="tableLeft">TLS&#95;RSA&#95;WITH&#95;AES&#95;256&#95;GCM&#95;SHA384 (<code>0x9d</code>)
+                </td>
+                <td class="tableRight">256</td>
+              </tr>
+              <tr>
+                <td class="tableLeft">TLS&#95;RSA&#95;WITH&#95;AES&#95;128&#95;CBC&#95;SHA (<code>0x2f</code>)
+                </td>
+                <td class="tableRight">128</td>
+              </tr>
+              <tr>
+                <td class="tableLeft">TLS&#95;RSA&#95;WITH&#95;AES&#95;256&#95;CBC&#95;SHA (<code>0x35</code>)
+                </td>
+                <td class="tableRight">256</td>
+              </tr>
+              <tr>
+                <td class="tableLeft">TLS&#95;RSA&#95;WITH&#95;3DES&#95;EDE&#95;CBC&#95;SHA (<code>0xa</code>)
+                </td>
+                <td class="tableRight">112</td>
+              </tr>
+
+              <tr class="tableRow">
+                <td colspan=2 align=left>
+                  <span class="color666666">(1) When a browser supports SSL 2, its SSL 2-only suites are shown
+	only on the very first connection to this site. To see the suites,
+        close all browser windows, then open this exact page directly. Don't refresh.</span>
+                </td>
+              </tr>
+
+
+            </table>
+
+            <br><br>
+
+            <img class="tIcon" src="images/icon-protocol-details.png" width="65" height="50" alt="">
+            <table class="reportTable">
+              <thead>
+                <tr>
+                  <td class="tableHead" colspan="2" align="left">Protocol Details</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="tableRow">
+                  <td class="tableLabel" width="250">Server Name Indication (SNI)</td>
+                  <td class="tableCell">Yes</td>
+                </tr>
+
+                <tr class="tableRow">
+                  <td class="tableLabel">Secure Renegotiation</td>
+                  <td class="tableCell">Yes</td>
+                </tr>
+
+                <tr class="tableRow">
+                  <td class="tableLabel">
+                    <font color=green>TLS compression</font>
+                  </td>
+                  <td class="tableCell">
+                    <font color=green>No</font>
+                  </td>
+                </tr>
+
+                <tr class="tableRow">
+                  <td class="tableLabel">Session tickets</td>
+                  <td class="tableCell">Yes</td>
+                </tr>
+
+                <tr class="tableRow">
+                  <td class="tableLabel">OCSP stapling</td>
+                  <td class="tableCell">Yes</td>
+                </tr>
+
+                <tr class="tableRow">
+                  <td class="tableLabel">Signature algorithms</td>
+                  <td class="tableCell">
+                    SHA256/ECDSA, Unknown (0x8)/Unknown (0x4), SHA256/RSA, SHA384/ECDSA, Unknown (0x8)/Unknown (0x5), SHA384/RSA, Unknown (0x8)/Unknown (0x6), SHA512/RSA, SHA1/RSA </td>
+                </tr>
+
+                <tr class="tableRow">
+                  <td class="tableLabel">Elliptic curves</td>
+                  <td class="tableCell">
+                    tls_grease_1a1a, x25519, secp256r1, secp384r1 </td>
+                </tr>
+
+                <tr class="tableRow">
+                  <td class="tableLabel">Next Protocol Negotiation</td>
+                  <td class="tableCell">No</td>
+                </tr>
+
+                <tr class="tableRow">
+                  <td class="tableLabel" width="250">Application Layer Protocol Negotiation</td>
+                  <td class="tableCell">Yes &nbsp; <span class="greySmall">
+			                        h2
+                                    http&#47;1&#46;1
+                            </td>
+		</tr>
+
+			    <tr class="tableRow">
+    	    <td class="tableLabel"><font color=green>SSL 2 handshake compatibility</font></td>
+    	    <td class="tableCell"><font color=green>No</font></td>
+    	</tr>
+			</tbody>
+	</table>
+
+	<br>
+
+	</div>
+	</div>
+
+
+    <div class="reportSection display-none" id="mixedDiv">
+        <div class="sectionTitle">Mixed Content Handling</div>
+        <div class="sectionBody">
+
+            <img class="tIcon" src="images/icon-misc.png" width="65" height="50">
+            <table class="reportTable">
+                <thead>
+                <tr>
+                    <td class="tableHead" colspan="3" align="left">Mixed Content Tests</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="tableRow">
+                    <td class="tableLeft">Images</td>
+                    <td class="tableRight width-100">Passive</td>
+                    <td class="tableRight width-100" id="mixedImages">Testing...</td>
+                </tr>
+
+                <tr class="tableRow">
+                    <td class="tableLeft">CSS</td>
+                    <td class="tableRight">Active</td>
+                    <td class="tableRight" id="mixedCssLink">Testing...</td>
+                </tr>
+
+                <tr class="tableRow">
+                    <td class="tableLeft">Scripts</td>
+                    <td class="tableRight">Active</td>
+                    <td class="tableRight" id="mixedScripts">Testing...</td>
+                </tr>
+
+                <tr class="tableRow">
+                    <td class="tableLeft">XMLHttpRequest</td>
+                    <td class="tableRight">Active</td>
+                    <td class="tableRight" id="mixedXhr">Testing...</td>
+                </tr>
+
+                <tr class="tableRow">
+                    <td class="tableLeft">WebSockets</td>
+                    <td class="tableRight">Active</td>
+                    <td class="tableRight" id="mixedWebSockets">Testing...</td>
+                </tr>
+
+                <tr class="tableRow">
+                    <td class="tableLeft">Frames</td>
+                    <td class="tableRight">Active</td>
+                    <td class="tableRight" id="mixedFrame">Testing...</td>
+                </tr>
+
+                <tr class="tableRow">
+                    <td colspan="3" align="left">
+                        <span class="color666666">(1) These tests might cause a mixed content warning in your browser. That's expected.<br></span>
+                    <span class="color666666">(2) If you see a failed test, try to reload the page. If the error persists, please get in touch.</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <br>
+
+            <table class="reportTable report-table-margin">
+              <thead>
+                <tr>
+                  <td class="tableHead" colspan="3" align="left">Related Functionality</td>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr class="tableRow">
+                  <td class="tableLeft">Upgrade Insecure Requests request header (<a href="https://w3c.github.io/webappsec/specs/upgrade/">more info</a>)</td>
+                  <td class="tableRight">Yes</td>
+                </tr>
+
+              </tbody>
+            </table>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="viewClient-clientTest.js"></script>
+
+
+  </div>
+
+
+  </div>
+
+
+  </div>
+
+  <div id="pageEnd">
+    <div id="copyright">
+      <table width=1050 border=0 cellpadding=5 cellspacing=0>
+        <tr>
+          <td class="footer">
+            Copyright &copy; 2009-2017 <a href="https://www.qualys.com">Qualys, Inc</A>. All Rights Reserved.
+          </td>
+          <td align=right class="footer">
+            <a href="https://www.ssllabs.com/about/terms.html" rel="noreferrer">Terms and Conditions</a>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+</body>
+
+</html>

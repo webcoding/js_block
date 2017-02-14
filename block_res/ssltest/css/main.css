@@ -1,0 +1,741 @@
+.mainPhoto {
+    width: 1100px;
+    height: 320px;
+    background: #2d63a5 url(../images/main-background.jpg);
+    margin: 0 auto;
+    padding: 50px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.mainPhoto > h2 {
+    font-size: 380%;
+    line-height: 100%;
+    letter-spacing: -1px;
+    font-weight: bold;
+    color: #fff;
+    max-width: 400px;
+    margin: 0;
+    text-shadow: 2px 2px 0 #000000;
+}
+
+.mainPhoto > h3 {
+    font-size: 200%;
+    line-height: 130%;
+    font-weight: normal;
+    color: #fff;
+    max-width: 450px;
+    margin: 0;
+    margin-top: 20px;
+    text-shadow: 2px 2px 0 #000000;
+}
+
+.featured {
+    width: 360px;
+    right: 20px;
+    top: 18px;
+    position: absolute;
+    margin-right: 20px;
+}
+
+a.featuredLink {
+    display: block;
+    margin: 2px;
+    background: url(../images/black40.png);
+    font-size: 170%;
+    line-height: 100%;
+    font-weight: normal;
+    width: 350px;
+    height: 69px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 15px;
+    padding-left: 25px;
+    text-decoration: none;
+    color: #fff;
+    text-shadow: 2px 2px 0 #000000;
+}
+
+a.featuredLink:hover {
+    background: url(../images/black50.png);
+}
+
+a.featuredLink img {
+    float: left;
+    display: block;
+    margin-right: 20px;
+}
+
+a.featuredLink > .d {
+    font-size: 60%;
+    font-weight: normal;
+    display: block;
+    margin-top: 0px;
+}
+
+
+.bookImage {
+    border: 1px solid #bbbbbb;
+    margin-right:10px;
+    margin-top: 5px;
+}
+
+.spanFont {
+    font-weight: bold;
+    font-size: 11px;
+}
+
+.footer {
+    font-size: 12px;
+}
+
+/*ssltest/viewClient.vm*/
+.floatLeft {
+    float: left;
+}
+
+/*ssltest/viewClient.vm*/
+
+.floatRight {
+    float:right;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.clientsJsonLink {
+    float:left;
+    margin-left: 10px;
+    margin-top: 25px;
+    text-decoration: underline;
+}
+
+
+#multiTable th { 
+    cursor: pointer;
+    cursor: hand; 
+}
+
+.greyColor { 
+    color:grey;
+    font-size: 12px;
+}
+
+.partnerLogo {
+    float: right;
+    padding-right: 30px;
+    padding-top: 10px;
+}
+
+#serverTestPara {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+#serverTestHideResults {
+    font-size: 12px; 
+    color: black; 
+    font-weight: normal; 
+    text-align: left;
+}
+
+.boxStyle{ 
+    float:left;
+    width:327px;
+    margin-right:20px;
+    height:340px;
+}
+
+.boxStyleRight{ 
+    float:left;
+    width:327px;
+    height:340px;
+}
+
+#appleTestDiv {
+    display: none;
+}
+
+#statusDetailMsg {
+    font-size: 14px;
+    color: #666666;
+    padding-top: 5px;
+}
+
+.certMismatch {
+    font-size: 0.7em;
+}
+
+.invalidHost {
+    font-weight: normal;
+    font-size: 0.7em;
+}
+
+#knownIssues {
+    font-size: 1.2em;
+}
+
+#commonError {
+    font-size: 1.2em;
+}
+
+#gradeA {
+    margin-bottom: 8px;
+}
+
+.Aplus{
+    font-size: 0.75em;
+}
+
+.Aminus{
+    font-size: 0.80em;
+}
+
+.zeroMargin {
+    margin:0px;
+}
+
+.serverKeyCert {
+    float: left;
+    width: 825px;
+}
+
+.downloadIcon {
+    float: left;
+    margin-left: 8px;
+    margin-top: 5px;
+}
+
+.blackColor{
+    color: black;
+}
+
+.colorF88017 {
+    color: #f88017 !important;
+}
+
+.colorRed {
+    color : red !important;
+}
+
+
+.color666666 {
+    color: #666666 !important;
+}
+
+
+.color-green {
+    color : green !important;
+}
+
+.tableCellRight {
+    width: 75px; 
+    text-align: right;
+}
+
+.tableCellCenter {
+    width: 125px;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 11px;
+}
+
+#no-trust-path {
+    text-align: center;
+}
+
+.cursor-help{
+    cursor : help;
+}
+
+.font-10{
+    font-size: 10px;
+}
+
+.font-11{
+    font-size: 11px;
+}
+
+.drown-test {
+    font-size: 12px; 
+    color: grey;
+    line-height: 18px;
+}
+
+/*ssltest/viewClient.vm*/
+
+.display-none{
+    display: none;
+}
+
+
+.infoBox {
+    border: 1px solid #bbbbbb;
+    padding: 5px;
+    background: #fffacd;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #222222;
+}
+
+.highlightBox {
+    border: 1px solid #888888;
+    padding: 5px;
+    background: #7ed84d;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #222222;
+}
+
+.noticeBox {
+    border: 1px solid #bbbbbb;
+    padding: 5px;
+    background: #CCEEFF;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #222222;
+}
+
+.warningBox {
+    border: 1px solid #bbbbbb;
+    padding: 5px;
+    background: #FFCF79;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #222222;
+}
+
+.errorBox {
+    border: 1px solid #bbbbbb;
+    padding: 5px;
+    background: #FFCCCB;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #222222;
+}
+
+#drownTable th {
+    color: #009ddf;
+    border-bottom: 2px solid #c6d2d4;
+    text-align: left;
+    font-size: 12px;
+    padding-top: 4px;
+    padding-bottom: 2px;
+}
+
+#drownTable td {
+    text-align: left;
+    font-size: 12px;
+    padding-top: 4px;
+    padding-bottom: 2px;
+}
+
+.warning-box-margin {
+    margin-top: 10px;
+}
+
+.text-align-left {
+    text-align: left;
+}
+
+/*ssltest/viewClient.vm*/
+
+.report-title-style{
+    color: black;
+    padding-top: 10px;
+}
+
+/*ssltest/viewClient.vm*/
+.width-650{
+    width: 650px;
+}
+
+/*ssltest/viewClient.vm*/
+.browser-handshake-fail{
+    font-size: 0.7em;
+    color: #666666;
+}
+
+/*ssltest/viewClient.vm*/
+.warning-box-line-height{
+    line-height: 145px;
+}
+
+/*ssltest/viewClient.vm*/
+#protocolTestDiv, #ssl2TestDiv, #ssl3TestDiv, #appleTestDiv, #freakTestDiv, #jamTestDiv {
+    display: none;
+}
+
+#protocolTestMsg, #ssl2TestMsg, #ssl3TestMsg, #appleTestMsg, #freakTestMsg, #jamTestMsg {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#protocolTestMsgNotes, #ssl2TestMsgNotes, #ssl3TestMsgNotes, #appleTestMsgNotes, #freakTestMsgNotes, #jamTestMsgNotes {
+    color: grey;
+    font-size: 14px;
+}
+
+.width-100{
+    width : 100px;
+}
+
+.report-table-margin{
+    margin-left: 75px !important;
+}
+
+.settings-message{
+    width: 800px; 
+    color: grey;
+    font-size: 12px;
+}
+
+.category_width_0{
+width:0px;
+}
+.category_width_3{
+width:3px;
+}
+.category_width_6{
+width:6px;
+}
+.category_width_9{
+width:9px;
+}
+.category_width_12{
+width:12px;
+}
+.category_width_15{
+width:15px;
+}
+.category_width_18{
+width:18px;
+}
+.category_width_21{
+width:21px;
+}
+.category_width_24{
+width:24px;
+}
+.category_width_27{
+width:27px;
+}
+.category_width_30{
+width:30px;
+}
+.category_width_33{
+width:33px;
+}
+.category_width_36{
+width:36px;
+}
+.category_width_39{
+width:39px;
+}
+.category_width_42{
+width:42px;
+}
+.category_width_45{
+width:45px;
+}
+.category_width_48{
+width:48px;
+}
+.category_width_51{
+width:51px;
+}
+.category_width_54{
+width:54px;
+}
+.category_width_57{
+width:57px;
+}
+.category_width_60{
+width:60px;
+}
+.category_width_63{
+width:63px;
+}
+.category_width_66{
+width:66px;
+}
+.category_width_69{
+width:69px;
+}
+.category_width_72{
+width:72px;
+}
+.category_width_75{
+width:75px;
+}
+.category_width_78{
+width:78px;
+}
+.category_width_81{
+width:81px;
+}
+.category_width_84{
+width:84px;
+}
+.category_width_87{
+width:87px;
+}
+.category_width_90{
+width:90px;
+}
+.category_width_93{
+width:93px;
+}
+.category_width_96{
+width:96px;
+}
+.category_width_99{
+width:99px;
+}
+.category_width_102{
+width:102px;
+}
+.category_width_105{
+width:105px;
+}
+.category_width_108{
+width:108px;
+}
+.category_width_111{
+width:111px;
+}
+.category_width_114{
+width:114px;
+}
+.category_width_117{
+width:117px;
+}
+.category_width_120{
+width:120px;
+}
+.category_width_123{
+width:123px;
+}
+.category_width_126{
+width:126px;
+}
+.category_width_129{
+width:129px;
+}
+.category_width_132{
+width:132px;
+}
+.category_width_135{
+width:135px;
+}
+.category_width_138{
+width:138px;
+}
+.category_width_141{
+width:141px;
+}
+.category_width_144{
+width:144px;
+}
+.category_width_147{
+width:147px;
+}
+.category_width_150{
+width:150px;
+}
+.category_width_153{
+width:153px;
+}
+.category_width_156{
+width:156px;
+}
+.category_width_159{
+width:159px;
+}
+.category_width_162{
+width:162px;
+}
+.category_width_165{
+width:165px;
+}
+.category_width_168{
+width:168px;
+}
+.category_width_171{
+width:171px;
+}
+.category_width_174{
+width:174px;
+}
+.category_width_177{
+width:177px;
+}
+.category_width_180{
+width:180px;
+}
+.category_width_183{
+width:183px;
+}
+.category_width_186{
+width:186px;
+}
+.category_width_189{
+width:189px;
+}
+.category_width_192{
+width:192px;
+}
+.category_width_195{
+width:195px;
+}
+.category_width_198{
+width:198px;
+}
+.category_width_201{
+width:201px;
+}
+.category_width_204{
+width:204px;
+}
+.category_width_207{
+width:207px;
+}
+.category_width_210{
+width:210px;
+}
+.category_width_213{
+width:213px;
+}
+.category_width_216{
+width:216px;
+}
+.category_width_219{
+width:219px;
+}
+.category_width_222{
+width:222px;
+}
+.category_width_225{
+width:225px;
+}
+.category_width_228{
+width:228px;
+}
+.category_width_231{
+width:231px;
+}
+.category_width_234{
+width:234px;
+}
+.category_width_237{
+width:237px;
+}
+.category_width_240{
+width:240px;
+}
+.category_width_243{
+width:243px;
+}
+.category_width_246{
+width:246px;
+}
+.category_width_249{
+width:249px;
+}
+.category_width_252{
+width:252px;
+}
+.category_width_255{
+width:255px;
+}
+.category_width_258{
+width:258px;
+}
+.category_width_261{
+width:261px;
+}
+.category_width_264{
+width:264px;
+}
+.category_width_267{
+width:267px;
+}
+.category_width_270{
+width:270px;
+}
+.category_width_273{
+width:273px;
+}
+.category_width_276{
+width:276px;
+}
+.category_width_279{
+width:279px;
+}
+.category_width_282{
+width:282px;
+}
+.category_width_285{
+width:285px;
+}
+.category_width_288{
+width:288px;
+}
+.category_width_291{
+width:291px;
+}
+.category_width_294{
+width:294px;
+}
+.category_width_297{
+width:297px;
+}
+.category_width_300{
+width:300px;
+}
+
+/*ssltest/clients.html*/
+.h {
+    color: green;
+}
+
+.w {
+    color: #F88017;
+}
+
+.e {
+    color: red;
+}
+
+
+/*projects/documentation/*/
+
+.openssl-book-style{
+margin-right: 10px; margin-top: 5px;
+}
+
+.minisite-header-3pixel{
+    padding-bottom: 3px;
+}
+
+.minisite-header{
+    padding-bottom: 1px;
+}
+
+
+/*ssltest/blacklistcheck.html*/
+#donot-scan-list {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+
+/*about/activityLog.vm*/
+#activityTable th {
+    font-size: 13px;
+}
+
+#activityTable td {
+    font-size: 13px;
+}
