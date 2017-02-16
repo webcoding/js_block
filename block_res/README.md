@@ -15,10 +15,9 @@
 - http://content-security-policy.com/
 - http://www.chinaw3c.org/archives/396/
 - https://www.w3.org/TR/2015/CR-CSP2-20150721/ csp2 已经被支持
-- http://www.chinaw3c.org/archives/1242/ csp3正在进行时
+- http://www.chinaw3c.org/archives/1242/ csp3正在进行时 https://www.w3.org/TR/CSP3/
 - https://w3c.github.io/webappsec-csp/
 - https://www.w3.org/TR/2016/WD-CSP3-20160126/
-- https://www.w3.org/Security/
 
 
 如何设置：
@@ -46,12 +45,33 @@ res.setHeader('Content-Security-Policy', "default-src 'self' 'unsafe-inline' 'un
 W3C 工作组考虑到了升级 HTTPS 的艰难，在 2015 年 4 月份就出了一个 Upgrade Insecure Requests 的草案 http://www.w3.org/TR/mixed-content/，他的作用就是让浏览器自动升级请求。页面一旦发现存在该响应头，会在加载 http 资源时自动替换成 https 请求。如下设置
 
 ```
+// 建议通过服务器 add header 来设置，这样测试环境不必转化为 https 资源支持，特别是用于本地调试
 <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
 ```
 
-目前支持这个设置的还只有 chrome 43.0，另外此设置不会对外域的 a 链接做处理，w3c 也有提供一个示例 http://www.w3.org/TR/upgrade-insecure-requests/#examples
+目前支持这个设置的还只有 chrome 43.0，另外此设置**不会对外域的 a 链接做处理**，w3c 也有提供一个示例 http://www.w3.org/TR/upgrade-insecure-requests/#examples
 
-以下为 github 上的参考：
+原本在安全级别上，https 站点加载 http图片资源不应该被 blocked，但现在出现了这种情况，
+
+**注：** https 目前在 IOS 10.2.1 的 Safari、Wechat、QQ 上测试到存在网页 https 加载 http 的图片资源时，第一次被 blocked 了(可稳定重现)，刷新后或重新进入就好了（有一台机器微信内怎么刷新都不好），查资料目前没有明确的说法会 blocked 掉 http 的图片资源。但经过测试，加载 https 的图片资源没有问题。可以通过以上 `upgrade-insecure-requests` 设置解决问题（全站设定）
+
+排查问题查询了部分资料如下：
+
+- https://support.apple.com/en-us/HT205265
+- https://blog.qualys.com/ssllabs/2014/03/19/https-mixed-content-still-the-easiest-way-to-break-ssl
+- https://developer.mozilla.org/zh-CN/docs/Security/MixedContent
+- https://www.w3.org/TR/upgrade-insecure-requests/#examples
+- https://www.w3.org/TR/upgrade-insecure-requests/#upgrade-request
+- https://www.w3.org/TR/mixed-content/
+- [关于启用 HTTPS 的一些经验分享（一）](https://imququ.com/post/sth-about-switch-to-https.html)
+- [关于启用 HTTPS 的一些经验分享（二）](https://imququ.com/post/sth-about-switch-to-https-2.html)
+- [关于启用 HTTPS 的一些经验分享（三）](https://imququ.com/post/sth-about-switch-to-https-3.html)
+- [诡异问题排查之「DataURI 引发的血案」](https://imququ.com/post/datauri-and-404.html)
+- [利用图片传输数据的另类思路](https://imququ.com/post/use-image-to-transfer-data.html)
+- [让浏览器不再显示 https 页面中的 http 请求警报](http://www.cnblogs.com/hustskyking/archive/2015/08/21/upgrade-insecure-requests.html)
+- https://bugzilla.mozilla.org/show_bug.cgi?id=1302695
+
+以下为 github 上的设置：
 
 ```
 Content-Security-Policy:default-src 'none'; base-uri 'self'; block-all-mixed-content; child-src render.githubusercontent.com; connect-src 'self' uploads.github.com status.github.com collector.githubapp.com api.github.com www.google-analytics.com github-cloud.s3.amazonaws.com wss://live.github.com; font-src assets-cdn.github.com; form-action 'self' github.com gist.github.com; frame-ancestors 'none'; img-src 'self' data: assets-cdn.github.com identicons.github.com collector.githubapp.com github-cloud.s3.amazonaws.com *.githubusercontent.com; media-src 'none'; script-src assets-cdn.github.com; style-src 'unsafe-inline' assets-cdn.github.com
