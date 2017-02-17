@@ -2,6 +2,13 @@
 
 ## 研究各种拦截：反爬虫、拦截广告、防止脚本注入或广告注入（防XSS）、斗黄牛等各种功能研究
 
+- 反爬虫 [block_spider](https://github.com/webcoding/js_block/tree/master/block_spider)
+- 防注入广告（注入 js、iframe或 img 等）[block_res](https://github.com/webcoding/js_block/tree/master/block_res)
+- 通过手机代理方式屏蔽广告 [block_ad](https://github.com/webcoding/js_block/tree/master/block_ad)
+- 实现爬虫 [crawler](https://github.com/webcoding/js_block/tree/master/crawler)
+- [github_rank](http://rank.cloudai.net)
+- 关于CORS
+
 ## nodejs 实现反爬虫
 
 学习 http://geek.csdn.net/news/detail/85333
