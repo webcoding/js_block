@@ -47,7 +47,7 @@ W3C 工作组考虑到了升级 HTTPS 的艰难，在 2015 年 4 月份就出了
 ```
 // 建议通过服务器 add header 来设置，这样测试环境不必转化为 https 资源支持，特别是用于本地调试
 // 服务端
-add_header Content-Security-Policy upgrade-insecure-requests
+add_header Content-Security-Policy upgrade-insecure-requests;
 
 // 客户端
 <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
