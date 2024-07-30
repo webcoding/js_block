@@ -11,6 +11,11 @@ const port = 3000;
 // var pageHtml = require('./test.html');
 
 const server = http.createServer((req, res) => {
+    if (path.normalize(decodeURI(req.url)) !== decodeURI(req.url)) {
+        res.statusCode = 403;
+        res.end();
+        return;
+    }
   res.statusCode = 200;
 
   var url = req.url === '/' ? '/test.html' : req.url;
